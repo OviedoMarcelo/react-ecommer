@@ -1,9 +1,13 @@
+h3,h2,a{
+  color: black;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
