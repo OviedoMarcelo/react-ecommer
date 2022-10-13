@@ -1,0 +1,35 @@
+.containerDetail{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 25%;
+    margin: 20px auto;
+    font-size: 12px;
+    background-color:  rgb(215, 208, 208);
+    color: black;
+    border-radius: 3px;
+
+}
+
+.img-detail{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    width: 40%;
+    height: 40%;
+    border-radius: 5px;
+    
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+

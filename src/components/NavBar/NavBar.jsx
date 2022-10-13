@@ -5,22 +5,22 @@ import logo from '../../logo.svg'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import CartWidget from "../CartWidget/Index";
+import CartWidget from "../CartWidget/CartWidget";
 
 export const NavBar = () => {
     return (
 
         <Navbar expand="lg" className="Navbar">
             <Container fluid>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/">
                     <img src={logo} className="App-logo" alt="logo" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Productos</Nav.Link>
-                        <Nav.Link href="#link">Contacto</Nav.Link>
-                        <Nav.Link href="#link">Sobre Nosotros</Nav.Link>
+                        <Nav.Link href="/">Todos los productos</Nav.Link>
+                        <Nav.Link href="/category/celular">Celulares</Nav.Link>
+                        <Nav.Link href="/category/tablet">Tablet</Nav.Link>
                     </Nav>
                     <CartWidget CartElement={0} />
                     <NavDropdown title="Usuario x" d="basic-nav-dropdown" className="p-3">
