@@ -4,9 +4,9 @@ const products = [
         name: "Iphone 12",
         price: 1000,
         category: "celular",
-        img: "https://itechstore.com.ar/wp-content/uploads/2022/06/iphone-13-pro-max-green-select.png",
+        img: "https://img.freepik.com/foto-gratis/planta-serpiente-maceta-blanca_53876-95437.jpg?w=740&t=st=1667593208~exp=1667593808~hmac=2506494bfcc13e50a74dd452f39d2c95d9829aab03bd808b20afc2c998c70efc",
         stock: 23,
-        description: "Descripcion de iphone 12"
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum a mollitia asperiores nostrum! Dolorem sint."
     },
     {
         id: "2",
@@ -15,7 +15,7 @@ const products = [
         category: "tablet",
         img: "https://itechstore.com.ar/wp-content/uploads/2022/06/iphone-13-pro-max-green-select.png",
         stock: 23,
-        description: "Descripcion de iphone 12"
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum a mollitia asperiores nostrum! Dolorem sint."
     },
     {
         id: "3",
@@ -24,7 +24,7 @@ const products = [
         category: "celular",
         img: "https://itechstore.com.ar/wp-content/uploads/2022/06/iphone-13-pro-max-green-select.png",
         stock: 23,
-        description: "Descripcion de iphone 12"
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum a mollitia asperiores nostrum! Dolorem sint."
     },
     {
         id: "4",
@@ -33,7 +33,7 @@ const products = [
         category: "tablet",
         img: "https://itechstore.com.ar/wp-content/uploads/2022/06/iphone-13-pro-max-green-select.png",
         stock: 23,
-        description: "Descripcion de iphone 12"
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum a mollitia asperiores nostrum! Dolorem sint."
     },
 ]
 

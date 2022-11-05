@@ -7,7 +7,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    display: inline-block;
+    display: inline-flex;
     outline: none;
     overflow: hidden;
     border-radius: 5px;
@@ -15,6 +15,7 @@
     background-color: #6c757d;
     text-decoration: none;
     text-align: center;
+    align-items: center;
     
 }
 

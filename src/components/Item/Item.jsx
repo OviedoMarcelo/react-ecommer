@@ -4,7 +4,7 @@ import './item.css'
 
 export const Item = ({ id, name, img, price, description }) => {
 
-    console.log(id)
+
     return (
 
         <Card style={{ width: '18rem' }} className="m-4">
@@ -22,5 +22,6 @@ export const Item = ({ id, name, img, price, description }) => {
         </Card>
     );
 }
+
 
 export default Item;

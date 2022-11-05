@@ -1,7 +1,11 @@
 import cart from './asset/cart-shopping-solid.svg'
 import './CartWidget.css'
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
-export const CartWidget = ({CartElement}) => {
+export const CartWidget = () => {
+
+    const {totalQuantity} = useContext(CartContext)
 
     return (
         <div className='cart-conteiner'>
@@ -11,7 +15,7 @@ export const CartWidget = ({CartElement}) => {
                 className='cart-image'
             />
             <span>
-                {CartElement}
+                {totalQuantity}
             </span>
         
         </div>
