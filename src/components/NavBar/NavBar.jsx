@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from "../CartWidget/CartWidget";
 
+
 export const NavBar = () => {
     return (
 
@@ -22,7 +23,7 @@ export const NavBar = () => {
                         <Nav.Link href="/category/celular">Celulares</Nav.Link>
                         <Nav.Link href="/category/tablet">Tablet</Nav.Link>
                     </Nav>
-                    <CartWidget/>
+                    <Nav.Link href="/cart"><CartWidget /></Nav.Link>
                     <NavDropdown title="Usuario x" d="basic-nav-dropdown" className="p-3">
                         <NavDropdown.Item href="#action/3.1">Mi Perfil</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Mi historial</NavDropdown.Item>
