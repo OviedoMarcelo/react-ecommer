@@ -7,6 +7,9 @@ h1,h2,h3,h4,h5,a,p,span{
   text-decoration: none;
 }
 
+.App {
+  text-align: center;
+}
 
 .App-logo {
   height: 10vmin;

@@ -1,19 +1,19 @@
 import { useState } from "react";
 import "./ItemCount.css";
 
-export const Counter = ({ onAdd,stock }) => {
+export const Counter = ({ onAdd,initial = 1,stock }) => {
 
-    const [quantity, setResult] = useState(0)
+    const [quantity, setQuantity] = useState(initial)
 
     const addItem = () => {
         if (quantity < stock) {
-            setResult(parseInt(quantity + 1))
+            setQuantity(parseInt(quantity + 1))
         }
     }
 
     const removeItem = () => {
         if (quantity > 0) {
-            setResult(parseInt(quantity - 1))
+            setQuantity(parseInt(quantity - 1))
         }
     }
 

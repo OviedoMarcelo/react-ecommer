@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from 'react';
 
 
 export const CartContext = createContext({
-    cart:[],
+    cart: [],
     totalQuantity: 0
 })
 
@@ -19,22 +19,33 @@ export const CartProvider = ({ children }) => {
         const totalQ = getQuantity()
         setTotalQuantity(totalQ)
 
-    }, [cart])
+    }, [cart]) //eslint-disable-line
 
     useEffect(() => {
         const total = getTotal()
         setTotal(total)
 
-    }, [cart])
+    }, [cart]) //eslint-disable-line
 
     /* Action funtions */
-    const addItem = (productToAdd) => {
+    const addItem = (productToAdd, quantity) => {
         if (!isInCart(productToAdd.id)) {
             setCart([...cart, productToAdd])
 
         }
         else {
-            console.log('Ya esta en el carrito')
+            const cartUpdated = cart.map(prod => {
+                if (prod.id === productToAdd.id) {
+                    const productUpdated = {
+                        ...prod,
+                        quantity: quantity
+                    }
+                    return productUpdated
+                } else {
+                    return prod
+                }
+            })
+            setCart(cartUpdated)
         }
     }
 
@@ -65,23 +76,24 @@ export const CartProvider = ({ children }) => {
 
     const getTotal = () => {
         let accu = 0
-  
+
         cart.forEach(prod => {
             accu += prod.quantity * prod.price
         })
-  
+
         return accu
     }
 
     const getProductQuantity = (id) => {
+
         const product = cart.find(prod => prod.id === id)
 
-        return product?.quantity
+        return product?.quantity /* If is an object read the property */
     }
 
 
     return (
-        <CartContext.Provider value={{ cart,totalQuantity,total, addItem, removeItem, isInCart,clearCart,getProductQuantity}}>
+        <CartContext.Provider value={{ cart, totalQuantity, total, addItem, removeItem, isInCart, clearCart, getProductQuantity }}>
             {children}
         </CartContext.Provider>
     )
