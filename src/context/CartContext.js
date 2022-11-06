@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from 'react';
 
 export const CartContext = createContext({
     cart:[],
-    totalQuantity:0
+    totalQuantity: 0
 })
 
 export const CartProvider = ({ children }) => {
@@ -43,6 +43,10 @@ export const CartProvider = ({ children }) => {
         setCart(cartWithOutProduct)
     }
 
+    const clearCart = () => {
+        setCart([])
+    }
+
     /* Validations funtions */
 
     const isInCart = (id) => {
@@ -77,7 +81,7 @@ export const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, isInCart,totalQuantity,total,getProductQuantity}}>
+        <CartContext.Provider value={{ cart,totalQuantity,total, addItem, removeItem, isInCart,clearCart,getProductQuantity}}>
             {children}
         </CartContext.Provider>
     )

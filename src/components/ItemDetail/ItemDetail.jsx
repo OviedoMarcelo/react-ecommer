@@ -2,12 +2,13 @@ import '../asyncMock'
 import '../ItemDetail/itemDetail.css'
 import Counter from '../ItemCount/ItemCount'
 import { useContext } from 'react'
-import {CartContext} from '../../context/CartContext'
+import { CartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
 
 
 const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
 
-    const {addItem} = useContext(CartContext)
+    const { addItem, isInCart } = useContext(CartContext)
 
     const handleOnAdd = (quantity) => {
         const productToAdd = {
@@ -25,7 +26,14 @@ const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
                 <h3>{category}</h3>
                 <p> Precio ${price}</p>
                 <p>{description}</p>
-                <Counter onAdd={handleOnAdd} stock={stock} />
+                <div>
+                    {
+                        !isInCart(id)
+                        ?<Counter onAdd={handleOnAdd} stock={stock} />
+                        :<Link to='/cart'>Finalizar compra</Link>
+                        
+                    }
+                </div>
             </div>
         </div>
 
