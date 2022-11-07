@@ -24,13 +24,13 @@ export const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link>
-                            <NavLink to={'/'} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Todos los productos</NavLink>
+                            <NavLink to={'/'}>Todos los productos</NavLink>
                         </Nav.Link>
                         <Nav.Link>
-                            <NavLink to={'/category/celular'} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Celulares</NavLink>
+                            <NavLink to={'/category/maceta'}>Macetas</NavLink>
                         </Nav.Link>
                         <Nav.Link>
-                            <NavLink to={'/category/tablet'} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Tablets</NavLink>
+                            <NavLink to={'/category/planta'}>Plantas</NavLink>
                         </Nav.Link>
                     </Nav>
                     <Nav.Link>

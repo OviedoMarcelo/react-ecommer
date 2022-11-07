@@ -1,10 +1,12 @@
 import './loader.css'
 
-export const Loader = () =>{
+export const Loader = ({ message }) => {
 
-    return(
-
-     <div className='loader'></div>
+    return (
+        <div>
+            <div className='loader'></div>
+            <p>{message}</p>
+        </div>
     );
 }
 

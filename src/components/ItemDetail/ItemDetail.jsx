@@ -27,7 +27,7 @@ const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
                 <p> Precio ${price}</p>
                 <p>{description}</p>
                 <div>
-                    <Counter onAdd={handleOnAdd} stock={stock} initial={quantityAdded}/>
+                    { stock !==0 ? <Counter onAdd={handleOnAdd} stock={stock} initial={quantityAdded}/>: <p>Sin stock</p>} 
                 </div>
             </div>
         </div>

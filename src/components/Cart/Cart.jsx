@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
+import { NavLink } from "react-router-dom"
 
 
 const Cart = () => {
@@ -25,6 +26,7 @@ const Cart = () => {
                     Eliminar todo
                 </button>
             </div>
+            <NavLink to={'/checkout'}>Check Out</NavLink>
 
         </div>
 

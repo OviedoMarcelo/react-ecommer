@@ -3,7 +3,8 @@ import { createContext, useState, useEffect } from 'react';
 
 export const CartContext = createContext({
     cart: [],
-    totalQuantity: 0
+    totalQuantity: 0,
+    total:0
 })
 
 export const CartProvider = ({ children }) => {

@@ -47,7 +47,7 @@ export const ItemListConteiner = ({ gretting }) => {
             <Container>
                 <Row>
                     <Col>
-                        <Loader />
+                        <Loader message={'Cargando los productos'}/>
                     </Col>
                 </Row>
             </Container>
