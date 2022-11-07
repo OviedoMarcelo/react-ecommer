@@ -3,27 +3,31 @@ import { CartContext } from "../../context/CartContext"
 import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from "firebase/firestore"
 import { db } from "../../services/firebase"
 import { Loader } from "../Loader/Loader"
-import {useNavigate } from "react-router-dom"
-
+import { useNavigate } from "react-router-dom"
+import OrderForm from "../Form/Form"
 
 
 const CheckOut = () => {
 
-    const { cart, total , clearCart} = useContext(CartContext)
+    const { cart, total, clearCart } = useContext(CartContext)
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
+    const [personalData, setPersonalData] = useState(false)
+    const [datos, setDatos] = useState({})
+    const fullData = (name, phone, email, adress) => {
+        setDatos({ name, phone, email, adress })
+        setPersonalData(true)
+    }
 
 
     /* CREATE ORDER WITH MOCK */
-    const createOrder = async () => {
+    const createOrder = async (salesData) => {
         setLoading(true)
 
         try {
             const objOrder = {
                 buyer: {
-                    name: 'Marcelo',
-                    phone: '123',
-                    mail: 'prueba@prueba.com'
+                    buyer: salesData,
                 },
                 items: cart,
                 total: total
@@ -63,9 +67,9 @@ const CheckOut = () => {
                 const orderRef = collection(db, 'orders')
                 const orderAdded = await addDoc(orderRef, objOrder)
                 clearCart()
-                setTimeout(()=>{
+                setTimeout(() => {
                     navigate('/')
-                },3000)
+                }, 3000)
                 console.log(`El Id de su orden es: ${orderAdded.id}`)
             } else {
                 console.log('Hay productos que estan fueras de stock')
@@ -88,9 +92,12 @@ const CheckOut = () => {
     return (
         <div>
             <h1>Checkout</h1>
-            <h2>Formulario</h2>
-            <button onClick={createOrder}>Generar orden</button>
-        </div>
+            <OrderForm fullData={fullData} />
+            {personalData
+            ?< button onClick={createOrder}>Generar orden</button>
+            :""
+        }
+        </div >
     )
 }
 export default CheckOut;
