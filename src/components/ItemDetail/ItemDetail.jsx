@@ -3,7 +3,19 @@ import '../ItemDetail/itemDetail.css'
 import Counter from '../ItemCount/ItemCount'
 import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
+import { ToastContainer,toast } from 'react-toastify';
 
+
+const notificationSucces = () => toast.success('Producto agregado correctamente', {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
 
 const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
 
@@ -15,6 +27,8 @@ const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
             id, name, price, quantity
         }
         addItem(productToAdd, productToAdd.quantity)
+        notificationSucces()
+                
     }
 
     return (
@@ -27,7 +41,8 @@ const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
                 <p> Precio ${price}</p>
                 <p>{description}</p>
                 <div>
-                    { stock !==0 ? <Counter onAdd={handleOnAdd} stock={stock} initial={quantityAdded}/>: <p>Sin stock</p>} 
+                    { stock !==0 ? <Counter onAdd={handleOnAdd} stock={stock} initial={quantityAdded}/>: <p>Sin stock</p>}
+                    <ToastContainer/>
                 </div>
             </div>
         </div>
