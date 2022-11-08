@@ -1,0 +1,29 @@
+.conteiner-cart div div{
+    border: 1px solid #898AA6;
+    margin: 0;
+    padding: 0.1em;
+  }
+
+
+.delete-button {
+    padding: 0.8em 5em;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #E64848;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.delete-button:hover {
+	background-color:#C21010;
+}
+.delete-button:active {
+	position:relative;
+	top:1px;
+}

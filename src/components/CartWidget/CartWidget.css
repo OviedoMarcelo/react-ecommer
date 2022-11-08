@@ -4,9 +4,9 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    background-color: rgb(207, 197, 197);
+    background-color: rgb(205, 182, 153);
     height: auto;
-    border: 2px solid rgb(206, 197, 197);
+    border: 2px solid;
     -webkit-border-radius: 15px;
     border-radius: 15px;
     padding: 0.2em;

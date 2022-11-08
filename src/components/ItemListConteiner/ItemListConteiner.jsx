@@ -44,14 +44,8 @@ export const ItemListConteiner = ({ gretting }) => {
 
     if (loading) {
         return (
-            <Container>
-                <Row>
-                    <Col>
-                        <Loader message={'Cargando los productos'}/>
-                    </Col>
-                </Row>
-            </Container>
-        );
+                <Loader message={'Cargando los productos'} />
+        )
     }
 
     /* Main return */

@@ -1,6 +1,20 @@
-.Navbar{
-    background-color: rgb(137, 138, 166);
+.Navbar {
+    background-color: rgb(187, 100, 100);
     padding: 0.1rem;
-  
 }
 
+.Navbar a {
+    color: rgb(205, 182, 153);
+    font-weight: 600;
+
+}
+
+.Navbar a:hover  {
+    transform: scale(1.1);
+    color: rgb(195, 219, 217);
+}
+
+.Navbar a:active  {
+    transform: scale(1.1);
+    color: rgb(200, 242, 239);
+}

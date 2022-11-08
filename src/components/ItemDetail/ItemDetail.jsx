@@ -3,19 +3,19 @@ import '../ItemDetail/itemDetail.css'
 import Counter from '../ItemCount/ItemCount'
 import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
-import { ToastContainer,toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 
-const notificationSucces = () => toast.success('Producto agregado correctamente', {
+const notificationSucces = () => toast('Producto agregado correctamente', {
     position: "top-right",
-    autoClose: 3000,
+    autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
-    pauseOnHover: false,
+    pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: "light",
-    });
+    theme: "dark",
+});
 
 const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
 
@@ -28,7 +28,7 @@ const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
         }
         addItem(productToAdd, productToAdd.quantity)
         notificationSucces()
-                
+
     }
 
     return (
@@ -41,8 +41,19 @@ const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
                 <p> Precio ${price}</p>
                 <p>{description}</p>
                 <div>
-                    { stock !==0 ? <Counter onAdd={handleOnAdd} stock={stock} initial={quantityAdded}/>: <p>Sin stock</p>}
-                    <ToastContainer/>
+                    {stock !== 0 ? <Counter onAdd={handleOnAdd} stock={stock} initial={quantityAdded} /> : <p>Sin stock</p>}
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
+                    />
                 </div>
             </div>
         </div>
