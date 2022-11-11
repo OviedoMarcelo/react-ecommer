@@ -1,9 +1,10 @@
 import '../asyncMock'
 import '../ItemDetail/itemDetail.css'
 import Counter from '../ItemCount/ItemCount'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { ToastContainer, toast } from 'react-toastify';
+
 
 
 const notificationSucces = () => toast('Producto agregado correctamente', {
@@ -21,6 +22,7 @@ const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
 
     const { addItem, getProductQuantity } = useContext(CartContext)
     const quantityAdded = getProductQuantity(id)
+    const [addedToCart, setAddedToCart] = useState(false)
 
     const handleOnAdd = (quantity) => {
         const productToAdd = {
@@ -28,6 +30,7 @@ const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
         }
         addItem(productToAdd, productToAdd.quantity)
         notificationSucces()
+        setAddedToCart(true)
 
     }
 
@@ -44,7 +47,7 @@ const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
                     {stock !== 0 ? <Counter onAdd={handleOnAdd} stock={stock} initial={quantityAdded} /> : <p>Sin stock</p>}
                     <ToastContainer
                         position="top-right"
-                        autoClose={5000}
+                        autoClose={2000}
                         hideProgressBar={false}
                         newestOnTop={false}
                         closeOnClick
@@ -54,6 +57,12 @@ const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
                         pauseOnHover
                         theme="dark"
                     />
+                    <div>
+                        {addedToCart ?
+                            <button class="button"> Finalizar compra
+                            </button>
+                            : ""}
+                    </div>
                 </div>
             </div>
         </div>

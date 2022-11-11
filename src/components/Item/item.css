@@ -1,3 +1,10 @@
+img{
+    height: 300px;
+    width: auto;
+    object-fit: cover;
+    padding: 1%;
+    border-radius: 20%;
+}
 .detail-button {
     min-width: 130px;
     height: 40px;
@@ -12,10 +19,12 @@
     overflow: hidden;
     border-radius: 5px;
     border: none;
-    background-color: #6c757d;
+    background-color: rgb(195, 219, 217);
     text-decoration: none;
     text-align: center;
     align-items: center;
+    bottom: 0px;
+    margin: 0;
     
 }
 

@@ -11,8 +11,6 @@ export const Loader = ({ message }) => {
             </div>  
             <p>{message}</p>  
         </div>
-
-
     );
 }
 
