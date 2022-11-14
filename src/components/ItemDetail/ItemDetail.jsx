@@ -4,6 +4,7 @@ import Counter from '../ItemCount/ItemCount'
 import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'react-router-dom'
 
 
 
@@ -59,8 +60,10 @@ const ItemDetail = ({ id, img, name, category, price, description, stock }) => {
                     />
                     <div>
                         {addedToCart ?
-                            <button class="button"> Finalizar compra
-                            </button>
+                            <div>
+                                <Link to={"/cart"} ><button className='button'>Finalizar compra</button></Link>
+                                <Link to={"/"} ><button className='button'>Seguir comprando</button></Link>
+                            </div>
                             : ""}
                     </div>
                 </div>
